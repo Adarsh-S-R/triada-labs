@@ -134,8 +134,8 @@
         .btn:hover { transform: translateY(-2px); }
         .btn svg { width: 16px; height: 16px; transition: transform 0.2s; }
         .btn:hover svg { transform: translateX(3px); }
-        .btn-primary { background: var(--gradient); color: var(--white); box-shadow: 0 10px 30px -10px rgba(224, 0, 43, 0.7); }
-        .btn-primary:hover { box-shadow: 0 14px 40px -10px rgba(255, 92, 116, 0.8); }
+        .btn-primary { background: var(--gradient); color: var(--white); box-shadow: 0 8px 24px -12px rgba(224, 0, 43, 0.65), inset 0 1px 0 rgba(255, 255, 255, 0.15); }
+        .btn-primary:hover { box-shadow: 0 12px 32px -12px rgba(255, 92, 116, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.2); }
         .btn-outline { border-color: var(--line-strong); color: var(--white); }
         .btn-outline:hover { border-color: var(--white); }
         .btn-sm { min-height: 40px; padding: 0 20px; font-size: 14px; }
@@ -166,8 +166,8 @@
         }
         .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--red-light); animation: pulse 2s infinite; }
         @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 92, 116, 0.6); } 70% { box-shadow: 0 0 0 10px rgba(255, 92, 116, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 92, 116, 0); } }
-        h1 { font-size: clamp(36px, 8vw, 88px); font-weight: 900; margin: 0 auto 24px; max-width: 900px; }
-        .hero .lead { margin: 0 auto 40px; }
+        h1 { font-size: clamp(36px, 8vw, 84px); font-weight: 900; line-height: 1.02; letter-spacing: -0.04em; margin: 0 auto 24px; max-width: 900px; }
+        .hero .lead { margin: 0 auto 40px; max-width: 540px; }
         .actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
         .launch { margin-top: 28px; font-size: 14px; color: var(--muted); }
         .launch strong { color: var(--white); }
@@ -202,8 +202,10 @@
         .card:hover::before { opacity: 1; }
         .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 24px; }
         .num { font-family: var(--mono); font-size: 13px; color: var(--muted); }
-        .icon { width: 48px; height: 48px; border-radius: 14px; background: var(--gradient); display: grid; place-items: center; }
-        .icon svg { width: 22px; height: 22px; color: var(--white); }
+        .icon { width: 46px; height: 46px; border-radius: 12px; background: rgba(224, 0, 43, 0.1); border: 1px solid rgba(255, 92, 116, 0.25); display: grid; place-items: center; transition: background 0.25s, border-color 0.25s; }
+        .icon svg { width: 21px; height: 21px; color: var(--red-light); transition: color 0.25s; }
+        .card:hover .icon { background: var(--gradient); border-color: transparent; }
+        .card:hover .icon svg { color: var(--white); }
         .card h3 { font-size: clamp(19px, 2.4vw, 22px); margin-bottom: 10px; }
         .card p { color: var(--muted); font-size: 16px; }
 
@@ -211,7 +213,8 @@
         .tracks { padding-top: 0; }
         .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; max-width: 880px; margin: 0 auto; list-style: none; }
         .chip { display: block; padding: 10px 20px; border-radius: 999px; border: 1px solid var(--line); font-weight: 500; font-size: 15px; transition: background 0.2s, border-color 0.2s; }
-        .chip:hover { background: var(--gradient); border-color: transparent; }
+        .chip { color: rgba(255, 255, 255, 0.85); }
+        .chip:hover { background: rgba(224, 0, 43, 0.08); border-color: rgba(255, 92, 116, 0.5); color: var(--white); }
 
         /* Video */
         .preview { padding-top: 0; }
@@ -259,7 +262,7 @@
         .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px; padding-top: 24px; border-top: 1px solid var(--line); }
         .socials { display: flex; gap: 10px; list-style: none; }
         .socials a { color: var(--muted); display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid var(--line); border-radius: 50%; transition: color 0.2s, background 0.2s, border-color 0.2s; }
-        .socials a:hover { color: var(--white); background: var(--gradient); border-color: transparent; }
+        .socials a:hover { color: var(--white); border-color: rgba(255, 92, 116, 0.6); background: rgba(224, 0, 43, 0.1); }
         .socials svg { width: 17px; height: 17px; }
         .copy { color: var(--muted); font-size: 14px; }
 
@@ -375,7 +378,7 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="label">What's coming</span>
-                    <h2>Everything you need to <span class="gradient-text">train and compete.</span></h2>
+                    <h2>Everything you need to train and compete.</h2>
                     <p class="lead">Designed for cybersecurity professionals, instructors and learners.</p>
                 </div>
                 <div class="features-grid">
@@ -437,7 +440,7 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="label">Platform preview</span>
-                    <h2>A first look at <span class="gradient-text">TRIADA Labs.</span></h2>
+                    <h2>A first look at TRIADA Labs.</h2>
                 </div>
                 <div class="video-frame reveal">
                     <iframe src="https://www.youtube.com/embed/FwMGEnr8ZyI?controls=1" title="TRIADA Labs demo" loading="lazy"
