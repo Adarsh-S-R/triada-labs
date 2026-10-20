@@ -3,832 +3,410 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description"
-        content="TRIADA Labs - CTF Platform for cybersecurity training, ethical hacking education, and hands-on cyber labs. Built by India's top 1% cybersecurity team.">
-    <meta name="keywords"
-        content="CTF platform, cybersecurity labs, ethical hacking training, triada labs, cyber range">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="TRIADA Labs is a CTF platform for cybersecurity training, ethical hacking education and hands-on cyber labs, built for academies, training institutes and hacker communities.">
+    <meta name="keywords" content="CTF platform, cybersecurity labs, ethical hacking training, triada labs, cyber range">
     <meta name="author" content="TRIADA Team">
-    <meta name="theme-color" content="#ff0033">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="theme-color" content="#0b0b0f">
+    <link rel="canonical" href="https://labs.triada.in/">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://labs.triada.in/">
     <meta property="og:title" content="TRIADA Labs | CTF Platform for Cybersecurity Training">
-    <meta property="og:description"
-        content="TRIADA Labs - Hands-on CTF platform for cybersecurity training. Designed for academies, training institutes, and hacker communities.">
+    <meta property="og:description" content="Hands-on CTF platform for cybersecurity training. Designed for academies, training institutes and hacker communities.">
     <meta property="og:image" content="https://triada.in/images/og-image.jpg">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://labs.triada.in/">
-    <meta property="twitter:title" content="TRIADA Labs | CTF Platform for Cybersecurity Training">
-    <meta property="twitter:description"
-        content="TRIADA Labs - Hands-on CTF platform for cybersecurity training. Designed for academies, training institutes, and hacker communities.">
-    <meta property="twitter:image" content="https://triada.in/images/og-image.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="TRIADA Labs | CTF Platform for Cybersecurity Training">
+    <meta name="twitter:description" content="Hands-on CTF platform for cybersecurity training. Designed for academies, training institutes and hacker communities.">
+    <meta name="twitter:image" content="https://triada.in/images/og-image.jpg">
 
     <title>TRIADA Labs | CTF Platform for Cybersecurity Training</title>
 
-    <!-- Preconnect to external domains -->
+    <link rel="icon" type="image/png" href="https://triada.in/images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-
-    <!-- Fonts -->
-    <link href="https://fonts.cdnfonts.com/css/technos" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
-
-    <!-- Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://triada.in/images/favicon.png">
-    <link rel="manifest" href="https://triada.in/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
 
     <style>
-        @import url('https://fonts.cdnfonts.com/css/technos');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
-
         :root {
-            --primary-red: #ff0033;
-            --dark-red: #cc0026;
-            --black: #0a0a0a;
-            --white: #fff;
-            --gray: #333;
-            --light-gray: #555;
-            --very-light-gray: #999;
-            --transparent-red: rgba(255, 0, 51, 0.1);
-            --primary-font: 'Montserrat', sans-serif;
-            --logo-font: 'Technos', sans-serif;
-            --transition-speed: 0.3s;
-            --glow-effect: 0 0 15px rgba(255, 0, 51, 0.5);
-            --text-glow: 0 0 10px rgba(255, 0, 51, 0.3);
-            --neon-border: 1px solid rgba(255, 0, 51, 0.3);
+            --bg: #0b0b0f;
+            --surface: #13131a;
+            --surface-2: #1a1a23;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #f4f4f6;
+            --muted: #9a9aa8;
+            --accent: #ff2d55;
+            --accent-soft: rgba(255, 45, 85, 0.12);
+            --green: #3ddc97;
+            --radius: 16px;
+            --font: 'Inter', system-ui, sans-serif;
+            --display: 'Space Grotesk', 'Inter', sans-serif;
+            --mono: 'JetBrains Mono', ui-monospace, monospace;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 
         body {
-            font-family: var(--primary-font);
-            background-color: var(--black);
-            color: var(--white);
-            min-height: 100vh;
-            overflow-x: hidden;
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            font-size: 16px;
-            background-image:
-                radial-gradient(circle at 20% 80%, rgba(255, 0, 51, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 0, 51, 0.05) 0%, transparent 50%);
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* Header Styles */
+        a { color: inherit; text-decoration: none; }
+        :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+
+        .container { width: min(1120px, 100% - 40px); margin-inline: auto; }
+        section { padding: 96px 0; }
+
+        .eyebrow {
+            font-family: var(--mono);
+            font-size: 13px;
+            color: var(--accent);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 14px;
+        }
+        h1, h2, h3 { font-family: var(--display); line-height: 1.1; letter-spacing: -0.02em; }
+        h2 { font-size: clamp(28px, 4vw, 40px); margin-bottom: 14px; }
+        .lead { color: var(--muted); font-size: 18px; max-width: 560px; }
+        .section-head { margin-bottom: 48px; }
+
+        /* Header */
         header {
-            position: fixed;
+            position: sticky;
             top: 0;
-            left: 0;
-            width: 100%;
-            background-color: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            border-bottom: var(--neon-border);
+            z-index: 50;
+            background: rgba(11, 11, 15, 0.8);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border);
         }
+        .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+        .logo { font-family: var(--display); font-weight: 700; font-size: 20px; display: flex; align-items: center; gap: 10px; }
+        .logo-mark { width: 26px; height: 26px; }
+        .logo span { color: var(--muted); font-weight: 500; }
+        .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+        .nav-links a { font-size: 14px; color: var(--muted); transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a[aria-current] { color: var(--text); }
+        .nav-toggle { display: none; background: none; border: 1px solid var(--border); color: var(--text); border-radius: 10px; width: 42px; height: 42px; cursor: pointer; }
 
-        .brand {
-            font-family: var(--logo-font);
-            font-size: 24px;
-            font-weight: bold;
-            color: var(--white);
-            position: relative;
-            z-index: 1001;
-            letter-spacing: 1px;
-            text-shadow: var(--text-glow);
-            padding: 10px 20px;
-            border: var(--neon-border);
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-            text-decoration: none;
-            display: block;
-            transition: all var(--transition-speed);
+        /* Buttons */
+        .btn {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 12px 22px; border-radius: 999px;
+            font-weight: 600; font-size: 15px;
+            border: 1px solid transparent; cursor: pointer;
+            transition: transform 0.2s, background 0.2s, border-color 0.2s;
         }
+        .btn:hover { transform: translateY(-2px); }
+        .btn-primary { background: var(--accent); color: #fff; }
+        .btn-primary:hover { background: #ff4a6b; }
+        .btn-ghost { border-color: var(--border); color: var(--text); background: var(--surface); }
+        .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.25); }
 
-        .brand:hover {
-            color: var(--white);
-            text-shadow: 0 0 15px rgba(255, 0, 51, 0.7);
-            border-color: rgba(255, 0, 51, 0.5);
-        }
-
-        nav {
-            position: relative;
-        }
-
-        .nav-toggle {
-            position: absolute;
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .nav-toggle-label {
-            display: none;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-            padding: 10px 20px;
-            background: rgba(10, 10, 10, 0.8);
-            border: var(--neon-border);
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 16px;
-            font-weight: 500;
-            transition: all var(--transition-speed);
-            padding: 5px 0;
-            position: relative;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--primary-red);
-            transition: width var(--transition-speed);
-        }
-
-        nav a:hover::after,
-        nav a.active::after {
-            width: 100%;
-        }
-
-        nav a:hover,
-        nav a.active {
-            color: var(--primary-red);
-        }
-
-        /* Main Container */
-        .labs-container {
-            min-height: 100vh;
-            padding-top: 80px;
-            background: var(--black);
-        }
-
-        /* Hero Section */
-        .labs-hero {
-            padding: 80px 20px 60px;
-            text-align: center;
-            background: linear-gradient(135deg, rgba(255, 0, 51, 0.02) 0%, rgba(0, 0, 0, 0.8) 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .labs-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background:
-                linear-gradient(45deg, transparent 30%, rgba(255, 0, 51, 0.05) 50%, transparent 70%),
-                repeating-linear-gradient(90deg, transparent, transparent 100px, rgba(255, 0, 51, 0.03) 100px, rgba(255, 0, 51, 0.03) 101px);
-            animation: scan 4s linear infinite;
+        /* Hero */
+        .hero { padding: 88px 0 72px; position: relative; overflow: hidden; }
+        .hero::before {
+            content: ''; position: absolute; inset: -20% 0 auto 0; height: 560px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 45, 85, 0.22), transparent 65%);
             pointer-events: none;
         }
+        .hero-grid { position: relative; display: grid; grid-template-columns: 1.05fr 1fr; gap: 56px; align-items: center; }
+        .badge {
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 6px 14px; border-radius: 999px;
+            background: var(--accent-soft); border: 1px solid rgba(255, 45, 85, 0.3);
+            font-size: 13px; font-weight: 500; margin-bottom: 24px;
+        }
+        .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+        @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0.6); } 70% { box-shadow: 0 0 0 10px rgba(255, 45, 85, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 45, 85, 0); } }
+        h1 { font-size: clamp(40px, 6vw, 68px); margin-bottom: 22px; }
+        h1 em { font-style: normal; color: var(--accent); }
+        .hero .lead { margin-bottom: 32px; }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 36px; }
+        .launch { font-family: var(--mono); font-size: 13px; color: var(--muted); }
+        .launch strong { color: var(--text); font-weight: 500; }
 
-        @keyframes scan {
-            0% {
-                transform: translateX(-100%);
-            }
+        /* Terminal */
+        .terminal {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); overflow: hidden;
+            box-shadow: 0 30px 80px -20px rgba(255, 45, 85, 0.25);
+        }
+        .terminal-bar { display: flex; align-items: center; gap: 7px; padding: 14px 16px; background: var(--surface-2); border-bottom: 1px solid var(--border); }
+        .terminal-bar i { width: 11px; height: 11px; border-radius: 50%; background: #3a3a46; }
+        .terminal-bar span { margin-left: 10px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+        .terminal-body { padding: 22px; font-family: var(--mono); font-size: 13.5px; line-height: 1.9; overflow-x: auto; }
+        .t-muted { color: var(--muted); }
+        .t-accent { color: var(--accent); }
+        .t-green { color: var(--green); }
+        .cursor { display: inline-block; width: 8px; height: 15px; background: var(--text); vertical-align: middle; animation: blink 1s steps(1) infinite; }
+        @keyframes blink { 50% { opacity: 0; } }
 
-            100% {
-                transform: translateX(100%);
-            }
-        }
+        /* Stats */
+        .stats { padding: 0 0 24px; }
+        .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); }
+        .stat { padding: 28px; text-align: center; }
+        .stat + .stat { border-left: 1px solid var(--border); }
+        .stat b { display: block; font-family: var(--display); font-size: 28px; }
+        .stat span { color: var(--muted); font-size: 14px; }
 
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+        /* Features */
+        .features-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+        .card {
+            background: var(--surface); border: 1px solid var(--border);
+            border-radius: var(--radius); padding: 32px;
+            transition: border-color 0.25s, transform 0.25s;
         }
+        .card:hover { border-color: rgba(255, 45, 85, 0.45); transform: translateY(-4px); }
+        .icon { width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft); color: var(--accent); display: grid; place-items: center; margin-bottom: 20px; }
+        .icon svg { width: 22px; height: 22px; }
+        .card h3 { font-size: 20px; margin-bottom: 10px; }
+        .card p { color: var(--muted); font-size: 15px; }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(255, 0, 51, 0.1);
-            border: 1px solid rgba(255, 0, 51, 0.3);
-            border-radius: 50px;
-            padding: 8px 20px;
-            margin-bottom: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            color: var(--primary-red);
-            backdrop-filter: blur(10px);
-            animation: pulse 2s infinite;
-        }
+        /* Categories */
+        .chips { display: flex; flex-wrap: wrap; gap: 12px; }
+        .chip { padding: 10px 18px; border-radius: 999px; border: 1px solid var(--border); background: var(--surface); font-family: var(--mono); font-size: 14px; transition: border-color 0.2s, color 0.2s; }
+        .chip:hover { border-color: var(--accent); color: var(--accent); }
 
-        @keyframes pulse {
+        /* Video */
+        .video-frame { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16 / 9; background: var(--surface); }
+        .video-frame iframe { width: 100%; height: 100%; border: 0; display: block; }
 
-            0%,
-            100% {
-                opacity: 1;
-            }
-
-            50% {
-                opacity: 0.7;
-            }
+        /* CTA */
+        .cta {
+            text-align: center; padding: 72px 28px;
+            border: 1px solid rgba(255, 45, 85, 0.3); border-radius: 24px;
+            background: radial-gradient(ellipse at 50% 0%, rgba(255, 45, 85, 0.2), var(--surface) 70%);
         }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--primary-red);
-            border-radius: 50%;
-            animation: blink 1.5s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                opacity: 1;
-            }
-
-            51%,
-            100% {
-                opacity: 0.3;
-            }
-        }
-
-        .hero-title {
-            font-size: 64px;
-            font-weight: 700;
-            margin-bottom: 24px;
-            color: var(--white);
-            line-height: 1.1;
-            letter-spacing: 2px;
-            text-shadow: var(--text-glow);
-            font-family: var(--logo-font);
-        }
-
-        .hero-subtitle {
-            font-size: 20px;
-            color: rgba(255, 255, 255, 0.8);
-            line-height: 1.6;
-            font-weight: 300;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .launch-timeline {
-            display: inline-flex;
-            align-items: center;
-            gap: 12px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 50px;
-            padding: 12px 24px;
-            margin-bottom: 50px;
-            font-size: 14px;
-            font-weight: 500;
-            color: var(--white);
-            backdrop-filter: blur(10px);
-        }
-
-        .timeline-icon {
-            color: var(--primary-red);
-            font-size: 16px;
-        }
-
-        /* Combined Features and Video Section */
-        .features-video-combined {
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.01);
-        }
-        .features-video-flex {
-            display: flex;
-            gap: 60px;
-            max-width: 1400px;
-            margin: 0 auto;
-            align-items: flex-start;
-        }
-        .features-container {
-            flex: 1 1 0;
-            min-width: 0;
-        }
-        .video-container-combined {
-            flex: 1 1 0;
-            min-width: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        .features-grid-2x2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        @media screen and (max-width: 768px) {
-            .features-grid-2x2 {
-                grid-template-columns: 1fr;
-                grid-template-rows: none;
-            }
-        }
-
-
-        /* Features Preview Section */
-        .features-preview {
-            padding: 80px 20px;
-            background: rgba(255, 255, 255, 0.01);
-        }
-        .features-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        .section-title {
-            font-size: 36px;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 16px;
-            text-align: center;
-            position: relative;
-            letter-spacing: 1px;
-        }
-        .section-subtitle {
-            font-size: 18px;
-            color: rgba(255, 255, 255, 0.7);
-            text-align: center;
-            margin-bottom: 60px;
-            font-weight: 300;
-        }
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-        .feature-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            padding: 32px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--primary-red), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(255, 0, 51, 0.3);
-            box-shadow: 0 20px 40px rgba(255, 0, 51, 0.1);
-        }
-        .feature-card:hover::before {
-            opacity: 1;
-        }
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--primary-red), var(--dark-red));
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            color: white;
-            margin-bottom: 24px;
-            box-shadow: 0 8px 24px rgba(255, 0, 51, 0.3);
-        }
-        .feature-card h3 {
-            font-size: 20px;
-            font-weight: 600;
-            color: var(--white);
-            margin-bottom: 12px;
-            line-height: 1.3;
-        }
-        .feature-card p {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.7);
-            line-height: 1.6;
-            margin: 0;
-        }
-        /* Video Demo Section */
-        .video-demo {
-            padding: 80px 20px;
-            background: rgba(0, 0, 0, 0.5);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .video-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        .video-wrapper {
-            position: relative;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            background: rgba(255, 255, 255, 0.02);
-            margin-top: 40px;
-        }
-        .video-wrapper iframe {
-            width: 100%;
-            height: 500px;
-            border: none;
-            display: block;
-        }
-        @media screen and (max-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-            .video-wrapper iframe {
-                height: 250px;
-            }
-            .section-title {
-                font-size: 28px;
-            }
-        }
-
+        .cta .lead { margin: 0 auto 30px; }
+        .cta .hero-actions { justify-content: center; margin: 0; }
 
         /* Footer */
-        footer {
-            background-color: rgba(10, 10, 10, 0.95);
-            padding: 40px 0;
-            border-top: var(--neon-border);
-            width: 100%;
+        footer { border-top: 1px solid var(--border); padding: 40px 0; margin-top: 96px; }
+        .footer-row { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+        .footer-links, .socials { display: flex; flex-wrap: wrap; gap: 22px; list-style: none; }
+        .footer-links a { color: var(--muted); font-size: 14px; }
+        .footer-links a:hover { color: var(--text); }
+        .socials a { color: var(--muted); display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid var(--border); border-radius: 10px; transition: color 0.2s, border-color 0.2s; }
+        .socials a:hover { color: var(--accent); border-color: var(--accent); }
+        .socials svg { width: 17px; height: 17px; }
+        .copy { color: var(--muted); font-size: 13px; width: 100%; padding-top: 24px; border-top: 1px solid var(--border); }
+
+        /* Scroll reveal */
+        .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+        .reveal.in { opacity: 1; transform: none; }
+
+        @media (max-width: 860px) {
+            section { padding: 72px 0; }
+            .hero-grid, .features-grid { grid-template-columns: 1fr; }
+            .nav-toggle { display: grid; place-items: center; }
+            .nav-links {
+                position: absolute; top: 68px; left: 0; right: 0;
+                flex-direction: column; align-items: stretch; gap: 0;
+                background: var(--bg); border-bottom: 1px solid var(--border);
+                padding: 8px 20px 16px; display: none;
+            }
+            .nav-links.open { display: flex; }
+            .nav-links a { display: block; padding: 14px 0; }
+            .stats-row { grid-template-columns: 1fr; }
+            .stat + .stat { border-left: 0; border-top: 1px solid var(--border); }
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .footer-logo {
-            font-family: var(--logo-font);
-            font-size: 24px;
-            font-weight: bold;
-            letter-spacing: 1px;
-            text-shadow: var(--text-glow);
-            padding: 10px 20px;
-            border: var(--neon-border);
-            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 20px;
-            padding: 10px 20px;
-            background: rgba(20, 20, 20, 0.5);
-            border: var(--neon-border);
-        }
-
-        .footer-links a {
-            color: var(--white);
-            text-decoration: none;
-            transition: all var(--transition-speed);
-            font-weight: 500;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary-red);
-        }
-
-        .footer-copyright {
-            color: var(--very-light-gray);
-            font-size: 14px;
-        }
-
-        .social-links-footer {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-icon-footer {
-            color: var(--white);
-            text-decoration: none;
-            font-size: 20px;
-            transition: all var(--transition-speed);
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .social-icon-footer:hover {
-            color: var(--primary-red);
-        }
-
-        .ctftime-logo {
-            height: 20px;
-            width: auto;
-        }
-
-        /* Responsive Design */
-        @media screen and (max-width: 768px) {
-            .nav-toggle-label {
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                width: 35px;
-                height: 35px;
-                background-color: rgba(20, 20, 20, 0.5);
-                border-radius: 4px;
-                border: 1px solid rgba(255, 0, 51, 0.2);
-            }
-
-            .nav-toggle-label span,
-            .nav-toggle-label span::before,
-            .nav-toggle-label span::after {
-                display: block;
-                position: absolute;
-                height: 2px;
-                width: 22px;
-                background-color: var(--primary-red);
-                transition: all 0.3s ease;
-            }
-
-            .nav-toggle-label span {
-                top: 50%;
-                transform: translateY(-50%);
-            }
-
-            .nav-toggle-label span::before,
-            .nav-toggle-label span::after {
-                content: '';
-            }
-
-            .nav-toggle-label span::before {
-                top: -7px;
-            }
-
-            .nav-toggle-label span::after {
-                top: 7px;
-            }
-
-            .nav-toggle:checked~ul {
-                right: 0;
-            }
-
-            nav ul {
-                position: fixed;
-                top: 0;
-                right: -100%;
-                flex-direction: column;
-                width: 100%;
-                height: 100vh;
-                background: rgba(10, 10, 10, 0.98);
-                z-index: 1001;
-                justify-content: center;
-                align-items: center;
-                padding: 80px 30px 30px;
-                transition: all 0.3s ease;
-            }
-
-            .hero-title {
-                font-size: 40px;
-            }
-
-            .hero-subtitle {
-                font-size: 16px;
-            }
-
-            .features-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .features-grid .feature-card:nth-child(4),
-            .features-grid .feature-card:nth-child(5) {
-                grid-column: span 1;
-            }
-
-
-
-            .video-wrapper iframe {
-                height: 250px;
-            }
-
-            .section-title {
-                font-size: 28px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        @media screen and (max-width: 480px) {
-            .hero-title {
-                font-size: 32px;
-            }
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .reveal { opacity: 1; transform: none; }
         }
     </style>
 </head>
 
 <body>
     <header>
-        <a href="https://triada.in/" class="brand" aria-label="Triada Home">Triada</a>
-        <nav aria-label="Main Navigation">
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
-                <span></span>
-            </label>
-            <ul>
+        <div class="container nav">
+            <a href="https://triada.in/" class="logo" aria-label="Triada home">
+                <svg class="logo-mark" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                    <path d="M16 3 29 27H3L16 3Z" stroke="#ff2d55" stroke-width="2.5" stroke-linejoin="round" />
+                    <circle cx="16" cy="19" r="3" fill="#ff2d55" />
+                </svg>
+                Triada <span>Labs</span>
+            </a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="https://triada.in/">Home</a></li>
                 <li><a href="https://triada.in/team.html">Our Team</a></li>
                 <li><a href="https://triada.in/achievements.html">Achievements</a></li>
-                <li><a href="https://labs.triada.in/" class="active" aria-current="page">Labs</a></li>
-                <li><a href="https://triada.in/join.html">Join Us</a></li>
+                <li><a href="https://labs.triada.in/" aria-current="page">Labs</a></li>
+                <li><a href="https://triada.in/join.html" class="btn btn-primary" style="padding:8px 18px;color:#fff">Join Us</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
 
-    <div class="labs-container">
-        <!-- Hero Section -->
-        <section class="labs-hero">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <span class="badge-dot"></span>
-                    Coming Soon
+    <main>
+        <section class="hero">
+            <div class="container hero-grid">
+                <div>
+                    <div class="badge"><span class="dot"></span> Coming Soon</div>
+                    <h1>Train like an attacker. <em>Defend like a pro.</em></h1>
+                    <p class="lead">A hands-on CTF platform for cybersecurity training and education, built by one of India's top 1% cybersecurity teams.</p>
+                    <div class="hero-actions">
+                        <a href="https://triada.in/join.html" class="btn btn-primary">Get in touch</a>
+                        <a href="#preview" class="btn btn-ghost">Watch preview</a>
+                    </div>
+                    <p class="launch">Expected launch: <strong>Q1 2027</strong></p>
                 </div>
-                <h1 class="hero-title">TRIADA Labs</h1>
-                <p class="hero-subtitle">A comprehensive CTF platform for cybersecurity training and education, built by
-                    one of India's top 1% cybersecurity teams.</p>
-                <div class="launch-timeline">
-                    <i class="fas fa-clock timeline-icon"></i>
-                    Expected Launch: Q4 2025
+
+                <div class="terminal" role="img" aria-label="Terminal mockup showing a CTF challenge being solved">
+                    <div class="terminal-bar"><i></i><i></i><i></i><span>triada@labs:~</span></div>
+                    <div class="terminal-body">
+                        <div><span class="t-accent">$</span> triada connect --lab web-01</div>
+                        <div class="t-muted">Spinning up isolated environment...</div>
+                        <div class="t-green">✔ Lab ready · 10.8.0.14</div>
+                        <div><span class="t-accent">$</span> triada submit <span class="t-muted">TRIADA{n0t_y3t_l4unch3d}</span></div>
+                        <div class="t-green">✔ Correct! +250 pts</div>
+                        <div><span class="t-accent">$</span> <span class="cursor"></span></div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Video Demo Section -->
-        <section class="video-demo">
-            <div class="video-container">
-                <h2 class="section-title">Platform Preview</h2>
-                <p class="section-subtitle">Get a glimpse of what's coming in TRIADA Labs</p>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/FwMGEnr8ZyI?si=G6WkLBy3-FFFbf58?controls=0" title="Triada Labs Demo"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        <section class="stats" aria-label="Platform highlights">
+            <div class="container">
+                <div class="stats-row">
+                    <div class="stat reveal"><b>6+</b><span>Challenge categories</span></div>
+                    <div class="stat reveal"><b>Isolated</b><span>Per-team lab environments</span></div>
+                    <div class="stat reveal"><b>Live</b><span>Scoreboards &amp; analytics</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">What's coming</p>
+                    <h2>Everything you need to run a cyber range.</h2>
+                    <p class="lead">Advanced features designed for cybersecurity professionals, instructors and learners.</p>
+                </div>
+                <div class="features-grid">
+                    <article class="card reveal">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.4 8 8 9 4.6-1 8-4 8-9V6l-8-3Z" /><path d="m9 12 2 2 4-4" /></svg></div>
+                        <h3>Interactive CTF challenges</h3>
+                        <p>Hands-on challenges covering web security, cryptography, reverse engineering, forensics and more.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5" /><path d="M2.5 20c.6-3.5 3-5.5 6.5-5.5s5.9 2 6.5 5.5" /><circle cx="17" cy="9" r="2.5" /><path d="M17 14.5c2.4.2 4 1.8 4.5 4.5" /></svg></div>
+                        <h3>Team collaboration</h3>
+                        <p>Built-in team management for educational institutions and cybersecurity training programs.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18" /><path d="m7 15 4-4 3 3 5-6" /></svg></div>
+                        <h3>Progress tracking</h3>
+                        <p>Analytics for learners and instructors to monitor skill development over time.</p>
+                    </article>
+                    <article class="card reveal">
+                        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 9 10-5 10 5-10 5L2 9Z" /><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5" /></svg></div>
+                        <h3>Educational integration</h3>
+                        <p>Fits academies and institutions, with curricula-aligned tracks and training programs.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" style="padding-top:0">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Challenge tracks</p>
+                    <h2>Pick a track and start hacking.</h2>
+                </div>
+                <div class="chips reveal">
+                    <span class="chip">web</span>
+                    <span class="chip">crypto</span>
+                    <span class="chip">reverse engineering</span>
+                    <span class="chip">forensics</span>
+                    <span class="chip">pwn</span>
+                    <span class="chip">osint</span>
+                    <span class="chip">misc</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="preview" style="padding-top:0">
+            <div class="container">
+                <div class="section-head reveal">
+                    <p class="eyebrow">Platform preview</p>
+                    <h2>A glimpse of TRIADA Labs.</h2>
+                </div>
+                <div class="video-frame reveal">
+                    <iframe src="https://www.youtube.com/embed/FwMGEnr8ZyI?controls=1" title="TRIADA Labs demo" loading="lazy"
+                        allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
             </div>
         </section>
 
-        <!-- Features Preview -->
-        <section class="features-preview">
-            <div class="features-container">
-                <h2 class="section-title">What's Coming</h2>
-                <p class="section-subtitle">Advanced features designed for cybersecurity professionals and learners</p>
-                <div class="features-grid-2x2">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-shield-alt"></i>
-                        </div>
-                        <h3>Interactive CTF Challenges</h3>
-                        <p>Hands-on cybersecurity challenges covering web security, cryptography, reverse engineering, forensics, and more.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <h3>Team Collaboration</h3>
-                        <p>Built-in team management tools for educational institutions and cybersecurity training programs.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h3>Progress Tracking</h3>
-                        <p>Comprehensive analytics and progress tracking for learners and instructors to monitor skill development.</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h3>Educational Integration</h3>
-                        <p>Seamless integration with educational curricula and training programs for academies and institutions.</p>
+        <section style="padding-top:0">
+            <div class="container">
+                <div class="cta reveal">
+                    <h2>Be first on the leaderboard.</h2>
+                    <p class="lead">Running an academy, institute or community? Talk to us about early access to TRIADA Labs.</p>
+                    <div class="hero-actions">
+                        <a href="https://triada.in/join.html" class="btn btn-primary">Join us</a>
+                        <a href="https://triada.in/team.html" class="btn btn-ghost">Meet the team</a>
                     </div>
                 </div>
             </div>
         </section>
+    </main>
 
-
-    </div>
-
-    <!-- Footer -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">Triada</div>
-            <div class="footer-links">
-                <a href="https://triada.in/">Home</a>
-                <a href="https://triada.in/team.html">Team</a>
-                <a href="https://triada.in/achievements.html">Achievements</a>
-                <a href="https://labs.triada.in/">Labs</a>
-                <a href="https://triada.in/join.html">Join</a>
-            </div>
-            <div class="footer-copyright">
-                © 2024 TRIADA Labs. All rights reserved.
-            </div>
-            <div class="social-links-footer">
-                <a href="https://github.com/team-triada" class="social-icon-footer" aria-label="GitHub">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/company/teamtriada" class="social-icon-footer" aria-label="LinkedIn">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-                <a href="https://x.com/teamtriada" class="social-icon-footer" aria-label="Twitter/X">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://ctftime.org/team/303057" class="social-icon-footer" target="_blank" aria-label="CTFtime">
-                    <img src="https://ctftime.org/favicon.png" alt="CTFtime" class="ctftime-logo">
-                </a>
-            </div>
+        <div class="container footer-row">
+            <a href="https://triada.in/" class="logo">Triada <span>Labs</span></a>
+            <ul class="footer-links">
+                <li><a href="https://triada.in/">Home</a></li>
+                <li><a href="https://triada.in/team.html">Team</a></li>
+                <li><a href="https://triada.in/achievements.html">Achievements</a></li>
+                <li><a href="https://labs.triada.in/">Labs</a></li>
+                <li><a href="https://triada.in/join.html">Join</a></li>
+            </ul>
+            <ul class="socials">
+                <li><a href="https://github.com/team-triada" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.7 5.4-5.27 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z" /></svg></a></li>
+                <li><a href="https://www.linkedin.com/company/teamtriada" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0Z" /></svg></a></li>
+                <li><a href="https://x.com/teamtriada" aria-label="X (Twitter)"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 1.15h3.68l-8.04 9.19L24 22.85h-7.41l-5.8-7.58-6.64 7.58H.47l8.6-9.83L0 1.15h7.6l5.24 6.93 6.06-6.93Zm-1.29 19.5h2.04L6.48 3.24H4.3l13.31 17.41Z" /></svg></a></li>
+                <li><a href="https://ctftime.org/team/303057" target="_blank" rel="noopener" aria-label="CTFtime"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg></a></li>
+            </ul>
+            <p class="copy">© 2026 TRIADA Labs. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
+        const toggle = document.getElementById('nav-toggle');
+        const links = document.getElementById('nav-links');
+        toggle.addEventListener('click', () => {
+            const open = links.classList.toggle('open');
+            toggle.setAttribute('aria-expanded', open);
         });
-
-        // Add scroll effect to header
-        window.addEventListener('scroll', function() {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(10, 10, 10, 0.98)';
-            } else {
-                header.style.backgroundColor = 'rgba(10, 10, 10, 0.95)';
+        links.addEventListener('click', e => {
+            if (e.target.closest('a')) {
+                links.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
             }
         });
 
-
-
-        // Mobile menu toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.querySelector('nav ul');
-
-        navToggle.addEventListener('change', function() {
-            if (this.checked) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = '';
-            }
-        });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function() {
-                navToggle.checked = false;
-                document.body.style.overflow = '';
-            });
-        });
+        const items = document.querySelectorAll('.reveal');
+        if ('IntersectionObserver' in window) {
+            const io = new IntersectionObserver(entries => {
+                entries.forEach(en => {
+                    if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); }
+                });
+            }, { threshold: 0.12 });
+            items.forEach(el => io.observe(el));
+        } else {
+            items.forEach(el => el.classList.add('in'));
+        }
     </script>
 </body>
 
